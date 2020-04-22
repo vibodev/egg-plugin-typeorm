@@ -1,0 +1,8 @@
+**/node_modules/**
+package.json
+
+# docs
+**/*.md
+
+# coverage
+/dist

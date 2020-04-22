@@ -1,0 +1,80 @@
+{
+  "name": "egg-plugin-typeorm",
+  "version": "0.1.1",
+  "main": "dist/index.js",
+  "author": "Vibo",
+  "license": "MIT",
+  "types":"index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vibodev/egg-plugin-typeorm"
+  },
+  "homepage": "https://github.com/vibodev/egg-plugin-typeorm",
+  "eggPlugin": {
+    "name": "typeorm"
+  },
+  "scripts": {
+    "commit": "git-cz",
+    "clean": "rimraf ./dist/*",
+    "tslint": "tslint --project . -c tslint.json './src/**/*.ts'",
+    "tsfix": "tslint --project . --fix -c tslint.json './src/**/*.ts'",
+    "build": "yarn clean & tsc",
+    "test": "mocha 'test/**/*.test.ts'"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "packages/*/src/**/*.css": [
+      "stylelint --cache --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "packages/*/src/**/*.js": [
+      "standard --fix",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@types/egg.js": "^0.0.30",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.13.1",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "commitizen": "^4.0.4",
+    "commitlint-config-cz": "^0.13.1",
+    "cz-customizable": "^6.2.0",
+    "debug": "^4.1.1",
+    "egg": "^2.26.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.6",
+    "power-assert": "^1.6.1",
+    "prettier": "^2.0.4",
+    "rimraf": "^3.0.2",
+    "standard": "^14.3.3",
+    "stylelint": "^13.3.2",
+    "stylelint-config-standard": "^20.0.0",
+    "ts-loader": "^7.0.1",
+    "ts-node": "^8.9.0",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-merge": "^4.2.2",
+    "webpackbar": "^4.0.0"
+  },
+  "dependencies": {
+    "typeorm": "^0.2.24"
+  }
+}

@@ -1,0 +1,44 @@
+# git files #
+######################
+.git
+.gitignore
+#SVN files#
+.svn
+
+# development files #
+######################
+node_modules/
+.idea
+# .vscode
+shrinkwrap.yaml
+yarn.lock
+yarn-error.log
+.editorconfig
+
+# OS generated files #
+######################
+.DS_Store
+ *.swp
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# other #
+######################
+src
+.cache
+docs
+debug
+_test
+test/report
+# config
+.commitlintrc.js
+.config/
+.cz-config.js
+.gitignore
+.prettierignore
+.stylelintrc.json
+.travis.yml
